@@ -21,16 +21,14 @@
         {{ p.text|truncatewords:50 }}
     </p>
         <a href="{% url 'posts:post_detail' p.pk %}">подробная информация</a>
-        {% include 'posts/includes/switcher.html' with index=True %}
+    {% if p.group %}
+        <a href="{% url 'posts:group_list' p.group.slug %}">Все записи группы</a>
+    {% endif %}
+    {% include 'posts/includes/switcher.html' with index=True %}
         {% for post in page_obj %}
-            {% if not p.group.slug %}
-                <a href="{% url 'posts:group_list' p.group.slug %}">
-                    Все записи группы
-                </a>
-            {% endif %}
             {% if forloop.last %}<hr>{% endif %}
     {% endfor %}
     {% endfor %}
-    {% endcache %}
-    {% include 'posts/includes/paginator.html' %}
+{% endcache %}
+{% include 'posts/includes/paginator.html' %}
 {% endblock %}
