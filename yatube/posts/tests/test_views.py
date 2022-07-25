@@ -261,7 +261,6 @@ class FollowViewsTest(TestCase):
         self.assertRedirects(response, url_redirect)
         self.assertEqual(count_follow + 1, new_count_follow)
 
-
     def test_unfollower_no_see_new_post(self):
         """У не подписчика поста нет"""
         new_post_follower = Post.objects.create(
