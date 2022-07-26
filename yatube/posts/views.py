@@ -38,8 +38,8 @@ def profile(request, username):
     post_list = author.posts.select_related('group').all()
     following = (request.user.is_authenticated
                  and Follow.objects.filter(
-                user=request.user,
-                author=author).exists())
+                    user=request.user,
+                    author=author).exists())
     context = {'author': author,
                'posts_sum': posts_sum,
                'post_list': post_list,
