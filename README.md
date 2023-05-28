@@ -15,7 +15,7 @@
 ## Технологии
 
 Проект разработан на Python с использованием фреймворка Django. В проекте используются следующие технологии:
-- Django ORM и база данных SQLite
+- Django ORM и база данных PostgreSQL
 - Django Forms и Django Views
 - HTML & CSS, Bootstrap для визуального оформления
 - Git для контроля версий
@@ -29,7 +29,7 @@
 
 1. Скачайте код проекта с GitHub
 ```
-git clone https://github.com/ApriCotBrain/Yatube.git
+git clone https://github.com/krankir/Social-network.git
 ```
 2. Создайте виртуальное окружение, активируйте его и установите зависимости
 ```
